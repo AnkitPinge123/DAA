@@ -1,0 +1,14 @@
+#Fibonacci Using Golden Ratio
+GR=1.618
+f=[0,1,1,2,3,5]
+def FibGR(n):
+    if n<6:
+        return f[n]
+    fn=5
+    t=5
+    while(t<n):
+        fn=round(fn*GR)
+        t=t+1
+    return fn
+n=9
+print(FibGR(n))

@@ -1,0 +1,13 @@
+def Knapsack(W,Wt,Val,n):
+    Dp=[0 for i in range(W+1)]
+    for i in range(1,n+1):
+        for j in range(W,0,-1):
+            if Wt[i-1] <= j:
+                Dp[j]=max(Dp[j],Dp[j-Wt[i-1]]+Val[i-1])
+    return Dp[W]
+    
+W=50
+Wt=[10,20,30]
+Val=[90,100,200]
+n=len(Wt)
+print(Knapsack(W,Wt,Val,n))
